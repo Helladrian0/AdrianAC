@@ -1,80 +1,39 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Actualizar año en el footer
-    const currentYear = new Date().getFullYear();
-    document.getElementById('current-year').textContent = currentYear;
-    
-    // Menú móvil
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-    });
-    
-    // Cerrar menú al hacer clic en un enlace
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-        });
-    });
-    
-    // Smooth scrolling para anclas
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const offset = 80; // Ajuste para la barra de navegación fija
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - offset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Formulario de contacto (simulado)
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Aquí iría la lógica para enviar el formulario
-            alert('¡Gracias por tu mensaje! Te responderé lo antes posible.');
-            this.reset();
-        });
-    }
-    
-    // Efecto de aparición al hacer scroll
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.section, .project-card');
-        const windowHeight = window.innerHeight;
+// Smooth scrolling para los enlaces del navbar
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
         
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const animationPoint = windowHeight - 100;
-            
-            if (elementPosition < animationPoint) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
-    };
-    
-    // Configurar opacidad inicial para animaciones
-    document.querySelectorAll('.section, .project-card').forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     });
-    
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Ejecutar al cargar la página
+});
+
+// Efecto de scroll para el navbar
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+    } else {
+        navbar.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+    }
+});
+
+// Animación para las cards de proyectos al aparecer
+const projectCards = document.querySelectorAll('.project-card');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+projectCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(card);
 });
