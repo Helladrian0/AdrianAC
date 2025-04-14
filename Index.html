@@ -1,380 +1,122 @@
-/* Variables CSS */
-:root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
-    --accent-color: #e74c3c;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --text-color: #333;
-    --text-light: #7f8c8d;
-    --font-main: 'Roboto', sans-serif;
-    --font-heading: 'Montserrat', sans-serif;
-    --transition: all 0.3s ease;
-    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Carlos Adrián Aquino Castillo - Desarrollador Web">
+    <meta name="keywords" content="desarrollo web, HTML, CSS, JavaScript, portafolio">
+    <title>Carlos Adrián Aquino Castillo | Desarrollador Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Adrián AC</a>
+            <ul class="nav-links">
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
 
-/* Reset y estilos base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <header class="hero">
+        <div class="container">
+            <h1>Carlos Adrián Aquino Castillo</h1>
+            <h2>Desarrollador Web</h2>
+            <p class="tagline">Transformando ideas en experiencias digitales</p>
+            <a href="#projects" class="btn">Ver mis proyectos</a>
+        </div>
+    </header>
 
-html {
-    scroll-behavior: smooth;
-}
+    <main class="container">
+        <section id="about" class="section">
+            <h2 class="section-title">Sobre mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Soy un apasionado desarrollador web con experiencia en HTML, CSS y JavaScript. Me especializo en crear soluciones digitales eficientes y atractivas.</p>
+                    <p>Actualmente estoy ampliando mis conocimientos en frameworks modernos y mejores prácticas de desarrollo.</p>
+                    <div class="skills">
+                        <h3>Habilidades técnicas:</h3>
+                        <ul class="skills-list">
+                            <li><i class="fas fa-check"></i> HTML5 & CSS3</li>
+                            <li><i class="fas fa-check"></i> JavaScript</li>
+                            <li><i class="fas fa-check"></i> Responsive Design</li>
+                            <li><i class="fas fa-check"></i> Git & GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <!-- Reemplaza con tu foto o un avatar profesional -->
+                    <img src="assets/profile.jpg" alt="Foto de perfil de Adrián" class="profile-img">
+                </div>
+            </div>
+        </section>
 
-body {
-    font-family: var(--font-main);
-    color: var(--text-color);
-    line-height: 1.6;
-    background-color: #f9f9f9;
-}
+        <section id="projects" class="section">
+            <h2 class="section-title">Mis Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Problema sencillo</h3>
+                    <p>Descripción breve del proyecto y tecnologías utilizadas.</p>
+                    <a href="#" class="project-link">Ver proyecto <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Planificar el desarrollo</h3>
+                    <p>Descripción breve del proyecto y tecnologías utilizadas.</p>
+                    <a href="#" class="project-link">Ver proyecto <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Integrar herramientas de IA</h3>
+                    <p>Descripción breve del proyecto y tecnologías utilizadas.</p>
+                    <a href="#" class="project-link">Ver proyecto <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Principios de código</h3>
+                    <p>Descripción breve del proyecto y tecnologías utilizadas.</p>
+                    <a href="#" class="project-link">Ver proyecto <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Seguir buenas prácticas</h3>
+                    <p>Descripción breve del proyecto y tecnologías utilizadas.</p>
+                    <a href="#" class="project-link">Ver proyecto <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Aplicación funcional</h3>
+                    <p>Descripción breve del proyecto y tecnologías utilizadas.</p>
+                    <a href="#" class="project-link">Ver proyecto <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </section>
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        <section id="contact" class="section">
+            <h2 class="section-title">Contáctame</h2>
+            <div class="contact-content">
+                <p>¿Interesado en trabajar juntos o tienes alguna pregunta?</p>
+                <div class="contact-methods">
+                    <a href="mailto:47139939@continental.edu.pe" class="contact-link">
+                        <i class="fas fa-envelope"></i> 47139939@continental.edu.pe
+                    </a>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-/* Tipografía */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Carlos Adrián Aquino Castillo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-p {
-    margin-bottom: 1rem;
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: var(--transition);
-}
-
-a:hover {
-    color: var(--accent-color);
-}
-
-/* Botones */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 500;
-    text-align: center;
-}
-
-.btn:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: var(--box-shadow);
-}
-
-/* Barra de navegación */
-.navbar {
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--dark-color);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 2rem;
-}
-
-.nav-links a {
-    color: var(--dark-color);
-    font-weight: 500;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--dark-color);
-    cursor: pointer;
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding-top: 80px;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.social-links {
-    margin-top: 2rem;
-}
-
-.social-links a {
-    color: white;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: var(--transition);
-}
-
-.social-links a:hover {
-    color: var(--light-color);
-    transform: translateY(-3px);
-}
-
-/* Secciones */
-.section {
-    padding: 5rem 0;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-    color: var(--secondary-color);
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background-color: var(--primary-color);
-    margin: 1rem auto;
-}
-
-/* Sobre mí */
-.about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.skills {
-    margin-top: 2rem;
-    text-align: left;
-}
-
-.skills-list {
-    list-style: none;
-    margin-top: 1rem;
-}
-
-.skills-list li {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.skills-list i {
-    margin-right: 10px;
-    color: var(--primary-color);
-}
-
-/* Proyectos */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.project-card {
-    background-color: white;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
-    padding: 1.5rem;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.project-card h3 {
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.project-card p {
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-}
-
-/* Contacto */
-.contact-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.contact-methods {
-    margin: 2rem 0;
-}
-
-.contact-link {
-    display: inline-flex;
-    align-items: center;
-    margin: 0 1rem;
-    font-size: 1.1rem;
-    color: var(--secondary-color);
-}
-
-.contact-link i {
-    margin-right: 10px;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-}
-
-.contact-form {
-    margin-top: 2rem;
-    text-align: left;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--secondary-color);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius);
-    font-family: var(--font-main);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-/* Footer */
-.footer {
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.footer p {
-    margin-bottom: 0;
-}
-
-.footer-links {
-    margin-top: 1rem;
-}
-
-.footer-links a {
-    color: white;
-    margin: 0 10px;
-}
-
-.footer-links a:hover {
-    color: var(--light-color);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background-color: white;
-        padding: 1rem;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .nav-links li {
-        margin: 1rem 0;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .subtitle {
-        font-size: 1.2rem;
-    }
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.section {
-    animation: fadeIn 0.8s ease-out;
-}
+    <script src="script.js"></script>
+</body>
+</html>
